@@ -1,17 +1,18 @@
-pipeline {
+ipeline {
     agent any
 
     environment {
         AWS_REGION = "ap-south-1"
         ECR_REPO = "952573859059.dkr.ecr.ap-south-1.amazonaws.com/signupapp"
-        IMAGE_TAG = "latest"
+        IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
     stages {
 
         stage('Checkout Code') {
             steps {
-                checkout scm
+				git branch: 'main',
+					url: 'https://github.com/sanjaynaik786/signup.git'
             }
         }
 
@@ -27,7 +28,7 @@ pipeline {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'aws-ecr-creds'
+                    credentialsId: 'aws-jenkins'
                 ]]) {
                     sh '''
                       aws ecr get-login-password --region $AWS_REGION | \
