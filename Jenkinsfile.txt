@@ -1,4 +1,4 @@
-pipeline {
+ipeline {
     agent any
 
     environment {
@@ -11,8 +11,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-				git branch: 'main',
-					url: 'https://github.com/sanjaynaik786/signup.git'
+				checkout scm
             }
         }
 
