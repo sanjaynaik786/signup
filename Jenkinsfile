@@ -8,7 +8,7 @@ pipeline {
 		EKS_CLUSTER     = "my-eks-cluster"
         K8S_NAMESPACE   = "default"
         DEPLOYMENT_NAME = "signup-app"
-        CONTAINER_NAME  = "signup-app"
+        CONTAINER_NAME  = "signupapp"
     }
 
     stages {
