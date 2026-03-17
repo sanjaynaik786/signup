@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: signup-app
-        image: 952573859059.dkr.ecr.ap-south-1.amazonaws.com/signupapp:IMAGE_TAG
+        image: 599476212618.dkr.ecr.ap-south-1.amazonaws.com/signupapp:IMAGE_TAG
         ports:
         - containerPort: 80
         readinessProbe:

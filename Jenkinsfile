@@ -3,9 +3,10 @@ pipeline {
 
     environment {
         AWS_REGION = "ap-south-1"
-        ECR_REPO = "952573859059.dkr.ecr.ap-south-1.amazonaws.com/signupapp"
+        ECR_REPO = "599476212618.dkr.ecr.ap-south-1.amazonaws.com/signupapp"
+	AWS_ACCOUNT  = "599476212618" 
         IMAGE_TAG = "${BUILD_NUMBER}"
-		EKS_CLUSTER     = "my-eks-cluster"
+	EKS_CLUSTER     = "my-eks-cluster"
         K8S_NAMESPACE   = "default"
         DEPLOYMENT_NAME = "signup-app"
         CONTAINER_NAME  = "signupapp"
