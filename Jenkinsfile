@@ -2,11 +2,14 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION  = "ap-south-1"
-        AWS_ACCOUNT = "<YOUR_AWS_ACCOUNT_ID>"     // ← replace this
-        ECR_REPO    = "${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/signup-app"
-        IMAGE_TAG   = "v${BUILD_NUMBER}"
-        CLUSTER     = "my-eks-cluster"
+        AWS_REGION = "ap-south-1"
+        ECR_REPO = "599476212618.dkr.ecr.ap-south-1.amazonaws.com/signupapp"
+	    AWS_ACCOUNT  = "599476212618" 
+        IMAGE_TAG = "${BUILD_NUMBER}"
+	    EKS_CLUSTER     = "my-eks-cluster"
+        K8S_NAMESPACE   = "default"
+        DEPLOYMENT_NAME = "signup-app"
+        CONTAINER_NAME  = "signupapp"
     }
 
     stages {
