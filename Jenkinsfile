@@ -61,8 +61,8 @@ pipeline {
             steps {
                 sh '''
                     aws eks update-kubeconfig \
-                        --region $AWS_REGION \
-                        --name $CLUSTER
+                        --region ap-south-1 \
+                        --name my-eks-cluster
 
                     sed -i "s|PLACEHOLDER_IMAGE|$ECR_REPO:$IMAGE_TAG|g" \
                         k8s/deployment.yaml
